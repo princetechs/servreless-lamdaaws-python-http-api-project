@@ -1,0 +1,3 @@
+instaloader==4.10
+reportlab==4.0.4
+boto3

@@ -1,0 +1,25 @@
+org: devsan
+app: aws-python-insta-api
+service: aws-python-http-api-project
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: python3.9
+  region: ap-south-1
+
+
+functions:
+  hello:
+    handler: handler.lambda_handler
+    events:
+      - httpApi:
+          path: /get_pdf_url
+          method: post
+
+plugins:
+  - serverless-python-requirements
+
+custom:
+  pythonRequirements:
+    dockerizePip: true
